@@ -1,0 +1,40 @@
+{
+  "identifier" : "TantrumLog",
+  "nonRenewingSubscriptions" : [],
+  "products" : [],
+  "settings" : {},
+  "subscriptionGroups" : [
+    {
+      "id" : "TantrumLogPro",
+      "localizations" : [],
+      "name" : "TantrumLog Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "2.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "TantrumLogProMonthly",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlock Trigger-frequency chart shared with therapists.",
+              "displayName" : "TantrumLog Pro Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.shimondeitel.tantrumlog.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "TantrumLog Pro Monthly",
+          "subscriptionGroupID" : "TantrumLogPro",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

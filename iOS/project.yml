@@ -1,0 +1,75 @@
+name: TantrumLog
+options:
+  bundleIdPrefix: com.shimondeitel.tantrumlog
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  TantrumLog:
+    type: application
+    platform: iOS
+    sources:
+      - path: TantrumLog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.tantrumlog
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: TantrumLog/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  TantrumLogTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: TantrumLogTests
+      - path: TantrumLog.storekit
+    dependencies:
+      - target: TantrumLog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.tantrumlog.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  TantrumLogUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: TantrumLogUITests
+    dependencies:
+      - target: TantrumLog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.tantrumlog.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  TantrumLog:
+    build:
+      targets:
+        TantrumLog: all
+        TantrumLogTests: [test]
+        TantrumLogUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: TantrumLog.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: TantrumLog.storekit
+      targets:
+        - TantrumLogTests
+        - TantrumLogUITests
+    archive:
+      config: Release
